@@ -1,0 +1,110 @@
+import java.util.Scanner;
+public class MtoU
+    {
+        public static void main(String[] args) {
+            Scanner sc=new Scanner(System.in);
+            System.out.println("Enter amount:");
+            double x=sc.nextDouble();
+            double u=0;
+            //double temp=0;
+            double m=0,mid=0,l=0,h=0;
+            if (x == 97.5) {
+                u = 50;
+            } else if (x == 252.5) {
+                u = 100;
+            } else if (x == 820) {
+                u = 200;
+            } else if (x == 1790) {
+                u = 300;
+            } else if (x == 2690) {
+                u = 400;
+            } else if (x == 6490) {
+                u = 800;
+            } else if (x == 8490) {
+                u = 1000;
+            }
+            else if(0<x && x<50) {
+                mid = x/1.95;
+            }
+            else if(97.5<x && x<252.5) {
+                l=50;
+                h=100;
+                while (Math.abs(x - m)>5) {
+                    mid = ((l + h) / 2);
+                    m = 97.5 + (mid - 50) * 3.10;
+                    if (x > m) {
+                        l = mid;
+                    } else {
+                        h = mid;
+                    }
+                }
+            }
+           else if(252.5<x && x<820) {
+                l=100;
+                h=200;
+                while (Math.abs(x - m)>5) {
+                    mid = ((l + h) / 2);
+                    m = 340 + (mid - 100) * 4.80;
+                    if (x > m) {
+                        l = mid;
+                    } else {
+                        h = mid;
+                    }
+                }
+            }
+            else if(200<x && x<300) {
+                l=200;
+                h=300;
+                while (Math.abs(x - m)>5) {
+                    mid = ((l + h) / 2);
+                    m = 1020 + (mid - 200) * 7.70;
+                    if (x > m) {
+                        l = mid;
+                    } else {
+                        h = mid;
+                    }
+                }
+            }
+            else if(300<x && x<400) {
+                l=300;
+                h=400;
+                while (Math.abs(x - m)>5) {
+                    mid = ((l + h) / 2);
+                    m = 1790 + (mid - 300) * 9.00;
+                    if (x > m) {
+                        l = mid;
+                    } else {
+                        h = mid;
+                    }
+                }
+            }
+            else if(400<x && x<800) {
+                l=400;
+                h=500;
+                while (Math.abs(x - m)>5) {
+                    mid = ((l + h) / 2);
+                    m = 2690 + (mid - 400) * 9.50;
+                    if (x > m) {
+                        l = mid;
+                    } else {
+                        h = mid;
+                    }
+                }
+            }
+            else if(800<x && x<1000) {
+                l=800;
+                h=1000;
+                while (Math.abs(x - m)>5) {
+                    mid = ((l + h) / 2);
+                    m = 6490 + (mid - 800) * 10.00;
+                    if (x > m) {
+                        l = mid;
+                    } else {
+                        h = mid;
+                    }
+                }
+            }
+            u=mid;
+            System.out.println("You can consume upto " + u);
+    }
+}
