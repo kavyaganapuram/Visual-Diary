@@ -23,7 +23,7 @@ public class MtoU
             } else if (x == 8490) {
                 u = 1000;
             }
-            else if(0<x && x<50) {
+            else if(x<97.5) {
                 mid = x/1.95;
             }
             else if(97.5<x && x<252.5) {
@@ -39,10 +39,15 @@ public class MtoU
                     }
                 }
             }
-           else if(252.5<x && x<820) {
+            else if(252.5 <x && 340>x){
+                mid=100;
+//                if((x-252.5)>(340-x))
+//                    mid=200;
+            }
+           else if(340<x && x<820) {
                 l=100;
                 h=200;
-                while (Math.abs(x - m)>5) {
+                while (Math.abs(x - m)>50) {
                     mid = ((l + h) / 2);
                     m = 340 + (mid - 100) * 4.80;
                     if (x > m) {
@@ -52,10 +57,15 @@ public class MtoU
                     }
                 }
             }
-            else if(200<x && x<300) {
+            else if(820<x && 1020>x){
+                mid=200;
+//                if((x-820)>(1020-x))
+//                    mid=300;
+            }
+            else if(1020<x && x<1790) {
                 l=200;
                 h=300;
-                while (Math.abs(x - m)>5) {
+                while (Math.abs(x - m)>50) {
                     mid = ((l + h) / 2);
                     m = 1020 + (mid - 200) * 7.70;
                     if (x > m) {
@@ -65,10 +75,10 @@ public class MtoU
                     }
                 }
             }
-            else if(300<x && x<400) {
+            else if(1790<x && x<2690) {
                 l=300;
                 h=400;
-                while (Math.abs(x - m)>5) {
+                while (Math.abs(x - m)>50) {
                     mid = ((l + h) / 2);
                     m = 1790 + (mid - 300) * 9.00;
                     if (x > m) {
@@ -78,10 +88,10 @@ public class MtoU
                     }
                 }
             }
-            else if(400<x && x<800) {
+            else if(2690<x && x<6490) {
                 l=400;
-                h=500;
-                while (Math.abs(x - m)>5) {
+                h=800;
+                while (Math.abs(x - m)>50) {
                     mid = ((l + h) / 2);
                     m = 2690 + (mid - 400) * 9.50;
                     if (x > m) {
@@ -91,10 +101,10 @@ public class MtoU
                     }
                 }
             }
-            else if(800<x && x<1000) {
+            else if(6490<x && x<8490) {
                 l=800;
                 h=1000;
-                while (Math.abs(x - m)>5) {
+                while (Math.abs(x - m)>50) {
                     mid = ((l + h) / 2);
                     m = 6490 + (mid - 800) * 10.00;
                     if (x > m) {
