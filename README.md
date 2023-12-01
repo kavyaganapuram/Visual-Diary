@@ -37,12 +37,24 @@ ng new your-project-name
 
 Copy the contents of the extracted src/app/components and src/app/services folders into the corresponding folders in your Angular project.
 
+Setting Up Server
+
+Create a new folder named server in your project directory.
+Copy the server.js file from the extracted src/server folder into the newly created server folder.
+
 Running the Application
+
 Navigate to your Angular project directory in the terminal:
 cd your-project-name
 
 Start the Angular application:
 ng serve
+
+Open a new terminal and navigate to the server folder.
+cd your-project-name/server
+
+Start the server:
+node server.js
 
 Open a web browser and go to http://localhost:4200 to access the Visual Diary application.
 
