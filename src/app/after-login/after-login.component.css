@@ -1,0 +1,47 @@
+/* styles.css */
+
+/* Style for the button container */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.button-container {
+    position: relative;
+    background-image: url(./d.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+    align-items: start;
+    justify-content: start;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+/* Style for the buttons */
+.button-container button {
+    position: relative;
+   align-items: center;
+    margin-left: 430px;
+    padding: 18px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: #afb4b4;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+.left-side{
+    display: flex;
+    flex-direction: column;
+    
+}
+#top{
+    margin-top: 300px;
+    margin-bottom: 70px;
+}

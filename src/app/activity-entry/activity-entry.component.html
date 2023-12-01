@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <title>Diary Application</title> -->
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .low-button {
+      background-color: green;
+      color: white;
+    }
+
+    .high-button {
+      background-color: red;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- <div class="container">
+    <h1 class="text-center">Diary Application</h1>
+        <div class="page">
+            <textarea
+              class="paper-textarea"
+              [(ngModel)]="activityText"
+              placeholder="Write your diary entry here..."
+              rows="17"
+              (input)="showPenIcon"
+              (blur)="hidePenIcon"
+            ></textarea>
+            <i class="pen-icon">✍️</i><br>
+            <input type="file" (change)="handleImageUpload($event)" multiple/>
+            <div id="b">
+              <button (click)="saveActivity()" class="mr-2">Save</button>
+              <br>
+            </div><br>
+            <button (click)="nav_preview()" class="btn btn-secondary">Preview</button>
+    </div>
+  </div> -->
+
+  <table border="2px">
+    <tr>
+      <th>Name</th>
+      <td>Status Code</td>
+      <td>Value</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>FDR1_CB_OPEN</td>
+      <td>0</td>
+      <td>LOW  </td>
+      <td><button class="low-button"></button></td>
+    </tr>
+    <tr>
+      <td>FDR1_CB_CLOSE</td>
+      <td>1</td>
+      <td>HIGH  </td>
+      <td><button class="high-button"></button></td>
+    </tr>
+    <tr>
+      <td>FDR1_SPRING_STATUS</td>
+      <td>1</td>
+      <td>HIGH  </td>
+      <td><button class="high-button"></button></td>
+    </tr>
+    <tr>
+      <td>FDR1_CB_LOCAL</td>
+      <td>0</td>
+      <td>LOW  </td>
+      <td><button class="low-button"></button></td>
+    </tr>
+    <tr>
+      <td>FDR1_CB_REMOTE</td>
+      <td>1</td>
+      <td>HIGH  </td>
+      <td><button class="high-button"></button></td>
+    </tr>
+    <tr>
+      <td>FDR1_86_OPTD</td>
+      <td>0</td>
+      <td>LOW  </td>
+      <td><button class="low-button"></button></td>
+    </tr>
+    <tr>
+      <td>FDR1_TC1_2</td>
+      <td>0</td>
+      <td>LOW  </td>
+      <td><button class="low-button"></button></td>
+    </tr>
+
+  </table>
+
+  <!-- Include Bootstrap JS (Optional, if you need Bootstrap JavaScript features) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function showPenIcon() {
+      document.querySelector('.pen-icon').style.display = 'inline';
+    }
+    
+    function hidePenIcon() {
+      document.querySelector('.pen-icon').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

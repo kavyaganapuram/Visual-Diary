@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diary Application</title>
+    <!-- Include Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      /* Additional Custom Styles */
+    </style>
+  </head>
+  <body>
+    <div class="book">
+
+      <div class="leftpage">
+        <h1 class="text-center mb-4">Diary Application</h1>
+        <div class="form-group">
+          <label for="datePicker">Select Date:</label>
+          <input
+            type="date"
+            id="datePicker"
+            class="form-control"
+            [(ngModel)]="selectedDate"
+            (change)="retrieveActivities()"
+          />
+        </div>
+        <p >
+          Selected Date: {{ formattedSelectedDate }}
+        </p>
+      <div class="content">
+        <div class="DairyEntrytext">
+          <ul id="righttext">
+            <li *ngFor="let activity of activities" class="activity-item">
+              <div>
+                {{ activity.Data }}
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>   
+      </div>
+
+
+      <div class="rightpage">
+        <ul id="ul">
+          <li *ngFor="let activity of activities" class="activity-item">
+            <div class="activity-images">
+              <ng-container
+                *ngIf="activity.ImageUrls && activity.ImageUrls.length > 0"
+              >
+                <iframe
+                  *ngFor="let imageUrl of activity.ImageUrls"
+                  [src]="imageUrl"
+                  alt="Activity Image"
+                  class="activity-image"
+                  id="frame"
+                ></iframe>
+              </ng-container>
+              <ng-container
+                *ngIf="!activity.ImageUrls || activity.ImageUrls.length === 0"
+              >
+                No images for this activity.
+              </ng-container>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Include Bootstrap JS (Optional, if you need Bootstrap JavaScript features) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
